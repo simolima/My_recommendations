@@ -46,9 +46,9 @@ You can visit my app at the following link https://recbysimone-7a1c5f52cc56.hero
 #User-User similarity Recommendation System
 I associate every user to a vector of ratings given by that particular user to all films.Then calculated the Pearson similarity,the higher is this similarity the more "similar" are considered the users.
 The goal in this case is predict what ratings a user could give to a particular film and suggests the ones with higher ratings.
-So on this case for every user i splitted the datase in 80 train 20 test and trained the following model :
+So on this case for every user i splitted the datase in 80 train 20 test and trained the following model :.
 $r˜uα = r¯u + κ \sum_{v∈Uˆu} suv(rvα − r¯v)$
-Dove:
+Dove:.
 -`r¯u` è la media delle valutazioni dell'utente `u`.
 - `Uˆu` rappresenta l'insieme di utenti più simili all'utente `u`.
 - `suv` è la similarità tra l'utente `u` e l'utente `v`.
