@@ -4,6 +4,7 @@ import numpy as np
 import requests
 
 
+
 # Imposta il layout su "wide" per utilizzare tutto lo spazio disponibile
 st.set_page_config(layout="wide")
 
@@ -63,7 +64,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-selectvalue = st.selectbox("Seleziona un film figo e goditene 5 simili", movies_list)  # Bottone per la selezione del film
+selectvalue = st.selectbox("Seleziona un film e goditene 5 simili", movies_list)  # Bottone per la selezione del film
 
 # Definisci la larghezza e l'altezza delle immagini dei poster
 poster_width = 200
