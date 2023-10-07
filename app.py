@@ -2,8 +2,8 @@ import streamlit as st
 import pickle
 import numpy as np
 import requests
-
-
+import sqlite3
+import re
 
 # Imposta il layout su "wide" per utilizzare tutto lo spazio disponibile
 st.set_page_config(layout="wide")
@@ -16,6 +16,24 @@ movies_nodes_list = pickle.load(open("list_movies_for_simililarity.pkl",'rb'))
 
 movies_list=movies['title'].values
 
+def extract_release_year(title):
+    # Cerca un anno tra parentesi tonde nel titolo del film
+    match = re.search(r'\((\d{4})\)', title)
+    if match:
+        return int(match.group(1))
+    else:
+        return 0 
+movies_list_sorted = sorted(movies_list, key=extract_release_year)
+
+# Visualizza il titolo con la classe CSS personalizzata e l'animazione
+st.markdown(
+    """
+    <h1 class="custom-title title-animation" style="color: #FF0000; text-align: center;">
+        Netflix ma povero
+    </h1>
+    """,
+    unsafe_allow_html=True,
+)
 # Personalizza l'aspetto della tua applicazione
 #st.title(" Netflix ma povero ")  # Utilizza un titolo più accattivante con emoji
 
@@ -53,25 +71,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
-# Visualizza il titolo con la classe CSS personalizzata e l'animazione
-st.markdown(
-    """
-    <h1 class="custom-title title-animation" style="color: #FF0000; text-align: center;">
-        Netflix ma povero
-    </h1>
-    """,
-    unsafe_allow_html=True,
-)
-
-selectvalue = st.selectbox("Seleziona un film e goditene 5 simili", movies_list)  # Bottone per la selezione del film
-
-# Definisci la larghezza e l'altezza delle immagini dei poster
-poster_width = 200
-poster_height = 300
-
-
-
+#Bottone per selezione
+selectvalue = st.selectbox("Seleziona un film figo e goditene 5 simili", movies_list_sorted) 
 
 def get_movie_poster_by_title(api_key, movie_title_with_year):
     base_url = 'https://api.themoviedb.org/3'
@@ -100,7 +101,6 @@ def get_movie_poster_by_title(api_key, movie_title_with_year):
                     return poster_url
     return None
 
-
 def recommend_movies(movie_title, similarity_matrix, movie_nodes, df, top_n=5):
     # Trova il movieId corrispondente al titolo del film
     film_corrispondente = movies[movies['title'] == movie_title]
@@ -126,6 +126,18 @@ def recommend_movies(movie_title, similarity_matrix, movie_nodes, df, top_n=5):
     recommended_posters = [get_movie_poster_by_title(api_key, movie) for movie in recommended_movies]
     
     return recommended_movies, recommended_posters
+
+ # Restituisci 0 se l'anno non è presente nel titolo
+
+# Ordina i film raccomandati in base all'anno di uscita
+recommended_movies, recommended_posters = recommend_movies(selectvalue, similarity, movies_nodes_list, movies)
+recommended_movies_sorted = sorted(recommended_movies, key=extract_release_year)
+
+
+
+# Definisci la larghezza e l'altezza delle immagini dei poster
+poster_width = 200
+poster_height = 300
 
 
 
