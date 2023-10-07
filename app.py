@@ -4,19 +4,9 @@ import numpy as np
 import requests
 
 
-# Imposta lo stile CSS per la modalità "dark" come stile predefinito
-st.markdown("""
-    <style>
-        body {
-            background-color: #000; /* Colore di sfondo nero */
-            color: #fff; /* Colore del testo bianco */
-        }
-    </style>
-""", unsafe_allow_html=True)
+
 # Imposta il layout su "wide" per utilizzare tutto lo spazio disponibile
 st.set_page_config(layout="wide")
-#imposta tema dark
-
 
 
 
