@@ -7,8 +7,11 @@ import requests
 
 # Imposta il layout su "wide" per utilizzare tutto lo spazio disponibile
 st.set_page_config(layout="wide")
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 180c1e458c6fade5dd86e2220b6105c7822d5498
 
 
 movies = pickle.load(open("df_movie_remaining.pkl",'rb'))
