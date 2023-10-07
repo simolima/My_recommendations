@@ -29,11 +29,11 @@ User-User similarity works in the following way , for every user i create a simi
 ## Pearson similarity
 $r = \frac{\sum((x - \bar{x})(y - \bar{y}))}{\sqrt{\sum(x - \bar{x})^2} \sqrt{\sum(y - \bar{y})^2}}$
 
-r è il coefficiente di correlazione di Pearson.
-x rappresenta i valori della prima variabile.
-y rappresenta i valori della seconda variabile.
-$\bar{x}$ è la media dei valori di x.
-$\bar{y}$ è la media dei valori di y.
+- r è il coefficiente di correlazione di Pearson.
+- x rappresenta i valori della prima variabile.
+- y rappresenta i valori della seconda variabile.
+- $\bar{x}$ è la media dei valori di x.
+- $\bar{y}$ è la media dei valori di y.
 
 
 ## Item-Item similarity Recommendation System
