@@ -7,17 +7,11 @@ import requests
 # Imposta il layout su "wide" per utilizzare tutto lo spazio disponibile
 st.set_page_config(layout="wide")
 #imposta tema dark
-st.markdown("<style>body {background-color: #000; color: #fff}</style>", unsafe_allow_html=True)
+# Imposta modalità "dark" come stile predefinito
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = True  
 
-# Aggiungi un'interruttore per la modalità "light" per consentire agli utenti di cambiarla
-dark_mode = st.checkbox("Modalità Dark")
 
-if dark_mode:
-    # Se l'utente attiva la modalità "dark", aggiorna gli stili CSS
-    st.markdown("<style>body {background-color: #000; color: #fff}</style>", unsafe_allow_html=True)
-else:
-    # Se l'utente disattiva la modalità "dark", reimposta gli stili CSS predefiniti
-    st.markdown("<style>body {background-color: #fff; color: #000}</style>", unsafe_allow_html=True)
 
 
 movies = pickle.load(open("df_movie_remaining.pkl",'rb'))
