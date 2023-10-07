@@ -4,12 +4,19 @@ import numpy as np
 import requests
 
 
+# Imposta lo stile CSS per la modalità "dark" come stile predefinito
+st.markdown("""
+    <style>
+        body {
+            background-color: #000; /* Colore di sfondo nero */
+            color: #fff; /* Colore del testo bianco */
+        }
+    </style>
+""", unsafe_allow_html=True)
 # Imposta il layout su "wide" per utilizzare tutto lo spazio disponibile
 st.set_page_config(layout="wide")
 #imposta tema dark
-# Imposta modalità "dark" come stile predefinito
-if "dark_mode" not in st.session_state:
-    st.session_state.dark_mode = True  
+
 
 
 
@@ -69,7 +76,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-selectvalue = st.selectbox("Seleziona un film figo e goditene 5 simili", movies_list)  # Bottone per la selezione del film
+selectvalue = st.selectbox("Seleziona un film e goditene 5 simili", movies_list)  # Bottone per la selezione del film
 
 # Definisci la larghezza e l'altezza delle immagini dei poster
 poster_width = 200
