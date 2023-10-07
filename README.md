@@ -46,14 +46,19 @@ You can visit my app at the following link https://recbysimone-7a1c5f52cc56.hero
 #User-User similarity Recommendation System
 I associate every user to a vector of ratings given by that particular user to all films.Then calculated the Pearson similarity,the higher is this similarity the more "similar" are considered the users.
 The goal in this case is predict what ratings a user could give to a particular film and suggests the ones with higher ratings.
-So on this case for every user i splitted the datase in 80 train 20 test and trained the following model :.
+So on this case for every user i splitted the datase in 80 train 20 test and trained the following model :
+
+
 $r˜uα = r¯u + κ \sum_{v∈Uˆu} suv(rvα − r¯v)$
 Dove:.
--`r¯u` è la media delle valutazioni dell'utente `u`.
+
 - `Uˆu` rappresenta l'insieme di utenti più simili all'utente `u`.
 - `suv` è la similarità tra l'utente `u` e l'utente `v`.
 - `κ` è un fattore di normalizzazione calcolato come:
 - $κ = \sum_{v} \frac{1}{|suv|}$
+- `r¯u` è la media delle valutazioni dell'utente `u`.
+
+  
 The MSE results were good but the computational cost was really high and i couldn't evaluate every user but only a small percentage.
 The big disadvantage of this model is that you cannot reduce the dimension of the similarity matrix because you have to give a prediction for every user in the real applications,and another disadvantage is that users without ratings can't have suggestions.
 The advantage is that in this way you can have a really personalized suggestions.
