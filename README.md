@@ -49,7 +49,7 @@ The goal in this case is predict what ratings a user could give to a particular 
 So on this case for every user i splitted the datase in 80 train 20 test and trained the following model :
 $r˜uα = r¯u + κ \sum_{v∈Uˆu} suv(rvα − r¯v)$
 Dove:
--`r¯u` è la media delle valutazioni dell'utente `u`
+-`r¯u` è la media delle valutazioni dell'utente `u`.
 - `Uˆu` rappresenta l'insieme di utenti più simili all'utente `u`.
 - `suv` è la similarità tra l'utente `u` e l'utente `v`.
 - `κ` è un fattore di normalizzazione calcolato come:
