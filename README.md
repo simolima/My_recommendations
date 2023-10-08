@@ -24,7 +24,7 @@ The dataset consists of 26 million ratings from 270,000 users on all the 45,000 
 I wanted to have my dataset in nodal form so i created a bipartite nodal network where movies and users are the nodes and arcs between the are weighted with the ratings given by a user to that film.
 
 ## Goals
-The goal was implements two different types of reccomendation system, one that i could deploy on Heroku based on Item-Item similarity were my Item are the movies and one based on User-User similarity.
+The goal was to implement two different types of reccomendation system, one that i could deploy on Heroku based on Item-Item similarity were my Item are the movies and one based on User-User similarity.
 Item-Item similarity works in the following way , for every film i create a similarity matrix (i decided for Pearson similarity) where every pair film-film has a similarity score.
 User-User similarity works in the following way , for every user i create a similarity matrix (i decided for Pearson similarity) where every pair user-user has a similarity score.
 
@@ -43,7 +43,7 @@ $r = \frac{\sum((x - \bar{x})(y - \bar{y}))}{\sqrt{\sum(x - \bar{x})^2} \sqrt{\s
 
 
 ## Item-Item similarity Recommendation System
-I associate every film to a vector of ratings given by the users to that particular film.Then calculated the Pearson similarity on the common users,the higher is this similarity the more "similar" are considered the movies.
+I associated every film to a vector of ratings given by the users to that particular film.Then calculated the Pearson similarity on the common users,the higher is this similarity the more "similar" are considered the movies.
 I selected only the 769 movies withi more valutations in order to have a computational time of 2 hours for the construction of the similarity matrix.
 The big advantages of this model is that you can access the results even offline and that you have a smaller similarity matrix at the beginning (movies are less than users) and that you can even reduce the dimensionality of this matrix as i have done choosing only the movies with the higher number of valutation discarding a large number of films that only a small number of users has seen.
 Then i create a funtion that has as input the title of a movie and returns the top-5 movies more similar.
