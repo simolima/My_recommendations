@@ -1,7 +1,6 @@
 ﻿# My personal movies recommendation system with deployement on Heroku
 Implementation of an Item-Item based recommendation system using Pearson similarity.
 
-
 You can visit my app at the following link https://recbysimone-7a1c5f52cc56.herokuapp.com/
 
 ## Programming Language and libraries
