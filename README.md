@@ -54,7 +54,7 @@ Then i developed a web app e deployed it on the cloud service heroku to make it 
 ## User-User similarity Recommendation System
 I associate every user to a vector of ratings given by that particular user to all films.Then calculated the Pearson similarity,the higher is this similarity the more "similar" are considered the users.
 The goal in this case is predict what ratings a user could give to a particular film and suggests the ones with higher ratings.
-So on this case for every user i splitted the datase in 80 train 20 test and trained the following model :
+So on this case for every user i splitted the datase in 80% train 20% test and trained the following model :
 
 
 $r˜uα = r¯u + κ \sum_{v∈Uˆu} suv(rvα − r¯v)$
@@ -72,7 +72,7 @@ The big disadvantage of this model is that you cannot reduce the dimension of th
 The advantage is that in this way you can have a really personalized suggestions.
 
 ## Conclusion
-I think that in my situation the only way to deploy a product was using the item-item method and i think that it has a large number of advantages if compared with user-user similarity.On the other hand i understand that in situations in which an user search highly specific recommendations the user-user method can be the better one.
+I think that in my situation the only way to deploy a product was using the item-item method and i think that it has a large number of advantages if compared with user-user similarity.On the other hand i understand that in situations in which an user looks for highly specific recommendations the user-user method can be the better one.
 
 
 
