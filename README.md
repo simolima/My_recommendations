@@ -7,12 +7,12 @@ You can visit my app at the following link https://recbysimone-7a1c5f52cc56.hero
 Python 3.11.5 
 
 
-numpy,
-pandas,
-networkx,
-streamlit,
-matplotlib,
-scipy.
+numpy 1.24.3 ,
+pandas 1.5.3 ,
+networkx 3.1 ,
+streamlit 1.27.2 ,
+matplotlib 3.8.0 ,
+scipy 1.11.3 .
 
 
 ## Dataset
