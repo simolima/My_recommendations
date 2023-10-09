@@ -16,7 +16,7 @@ scipy 1.11.3 .
 
 
 ## Dataset
-The datasets used are available at https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset/data
+The datasets used are available at https://www.kaggle.com/datasets/veeralakrishna/movielens-25m-dataset
 in particular i used the entire datasets ratings.csv and movies.csv
 The dataset consists of 26 million ratings from 270,000 users on all the 45,000 movies.
 
