@@ -44,7 +44,7 @@ $r = \frac{\sum((x - \bar{x})(y - \bar{y}))}{\sqrt{\sum(x - \bar{x})^2} \sqrt{\s
 
 ## Item-Item similarity Recommendation System
 I associated every film to a vector of ratings given by the users to that particular film.Then calculated the Pearson similarity on the common users,the higher is this similarity the more "similar" are considered the movies.
-I selected only the 769 movies withi more valutations in order to have a computational time of 2 hours for the construction of the similarity matrix.
+I selected only the 769 movies with more valutations in order to have a computational time of 2 hours for the construction of the similarity matrix.
 The big advantages of this model is that you can access the results even offline and that you have a smaller similarity matrix at the beginning (movies are less than users) and that you can even reduce the dimensionality of this matrix as i have done choosing only the movies with the higher number of valutation discarding a large number of films that only a small number of users has seen.
 Then i create a funtion that has as input the title of a movie and returns the top-5 movies more similar.
 Then i developed a web app e deployed it on the cloud service heroku to make it available for everyone and have some feedbacks.The link to the web app is https://recbysimone-7a1c5f52cc56.herokuapp.com/.
