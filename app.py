@@ -29,7 +29,7 @@ movies_list_sorted = sorted(movies_list, key=extract_release_year)
 st.markdown(
     """
     <h1 class="custom-title title-animation" style="color: #FF0000; text-align: center;">
-        Netflix ma povero
+        Simone's recommendations
     </h1>
     """,
     unsafe_allow_html=True,
@@ -72,7 +72,7 @@ st.markdown(
 )
 
 #Bottone per selezione
-selectvalue = st.selectbox("Seleziona un film figo e goditene 5 simili", movies_list_sorted) 
+selectvalue = st.selectbox("Seleziona un film e goditene 5 simili", movies_list_sorted) 
 
 def get_movie_poster_by_title(api_key, movie_title_with_year):
     base_url = 'https://api.themoviedb.org/3'
